@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= typeof title === "undefined" ? "#life" : title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//d2c5utp5fpfikz.cloudfront.net/3_1_1/css/bootstrap.min.css" rel="stylesheet">
+    
+<meta name="description" content="#life anonymous photo sharing app.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="#life - hashtag your life">
+<meta property="og:image" content="/images/appIcon.png">
+<meta property="og:description" content="#life anonymous photo sharing app.">
+<meta property="og:url" content="http://life.uffda.me">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hashtaglifeapp_">
+<% if (!_.isEmpty(hashtags)) { %>
+<meta name="twitter:title" content="#<%= searched %> - photo taken on #life">
+<% }  %>
+<meta name="twitter:description" content="#Life captures the moments around you. Take a photo and tag it with a Hashtag. The world will view it, laugh, and like it. ">
+<meta name="twitter:creator" content="@hashtaglifeapp_">
+<% if (!_.isEmpty(hashtags)) { %>
+<meta name="twitter:image:src" content="<%= hashtags[0].get('image').url() %>">
+<% }  %>
+<% if (!_.isEmpty(hashtags)) { %>
+<meta name="twitter:domain" content="life.uffda.me/<%= searched %>">
+<% }  %>
+<meta name="twitter:app:name:iphone" content="">
+<meta name="twitter:app:name:ipad" content="">
+<meta name="twitter:app:name:googleplay" content="">
+<meta name="twitter:app:url:iphone" content="">
+<meta name="twitter:app:url:ipad" content="">
+<meta name="twitter:app:url:googleplay" content="">
+<meta name="twitter:app:id:iphone" content="id904884186">
+<meta name="twitter:app:id:ipad" content="">
+<meta name="twitter:app:id:googleplay" content="">
+
+<link rel='stylesheet' href='/stylesheets/<%= typeof stylesheet === "undefined" ? "main" : stylesheet %>.css' />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53e135a11a5458fd"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53643197-1', 'auto');
+  ga('send', 'pageview');
+
+</script>  
+
+</head>
+  <body>
+
+<div class="main-container">
+
+  <div class="navBar">
+  
+  	<div class="navBar-left">
+		<a href="https://itunes.apple.com/us/app/life-hashtag-your-life/id904884186" class="navBar-download">< Get the App</a>
+	</div>
+
+	<div class="navBar-center">
+		<img src="/images/logo.png" class="navBar-logo"  />
+	</div>
+
+	<div class="navBar-right">
+		<div class="navbar-social">
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+
+		</div>
+	</div>
+
+  </div>	
+
+

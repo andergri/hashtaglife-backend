@@ -1,0 +1,195 @@
+body {
+	background-color: #333333;
+	width: 100%;
+	height: 100%;
+}
+
+.main-container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: #333 url(//d36xtkk24g8jdx.cloudfront.net/bluebar/f5b9a72/images/profile/noise-black.png) 50% 50%;
+        position: relative;
+        overflow: hidden;
+	padding-bottom: 40px;
+}
+
+/** Nav Bar **/
+
+.navBar {
+	width: 100%;
+	height: 60px;
+	background-color: #f9bf3b;
+}
+
+.navBar-left {
+	float:left;
+}
+.navBar-download {
+	color: white;
+	font-size: 24px;
+	margin: 10px;
+	display: block;
+	list-style-type: none;
+}
+
+.navBar-download:hover {
+        color: none;
+}
+
+.navBar-center{
+        position: absolute;
+        left: 50%;
+        margin-left: -42px!important;
+}
+
+.navBar-logo {
+	max-width: 84px;
+}
+
+.navBar-right {
+	float:right;
+}
+
+.navbar-social {
+	width: 155px;
+	margin-top: 12px;
+}
+
+/** Photo Frame **/
+
+.selfie_container {
+	width:100%;
+	height: 100%;
+	
+}
+
+h2 {
+	color: white;
+	font-size: 47px;
+	font-weight: bold;
+	line-height: 52px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 736px;	
+	text-align: center;
+	word-wrap: break-word;
+	margin-top: 33px;
+}
+
+h3 {
+        color: white;
+        font-size: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 736px;
+        text-align: center;
+        word-wrap: break-word;
+	display: none;
+}
+
+h4 {
+        color: white;
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 736px;
+        text-align: center;
+        word-wrap: break-word;
+	display: none;
+}
+
+
+/** Photo **/
+
+.picture_container {
+
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1024px;
+	min-width: 720px;
+}
+
+.picture {
+
+	position: relative;
+	bottom: 1px;
+	left: 1px;
+	float: left;
+	right: 0;
+	top: 0;
+	width: 250px;
+	height: 250px;
+}
+
+.picture-img {
+	background-size: 100% 100%;
+	position: relative;
+	min-height: 100%;
+	background-size: cover;
+	overflow: hidden;
+}
+.picture-overlay {
+	border: 1px solid rgba(255,255,255,.15);
+	bottom: 0;
+	display: block;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 250px;
+	height: 250px;
+}
+
+.navbarFooter{
+	display: none;
+	float: left;
+	width: 100%;
+}
+
+@media (max-width: 719px) {
+
+.picture_container {
+        max-width: 320px;
+        min-width: 320px;
+}
+.picture {
+
+        width: 320px;
+        min-height: 320px;
+}
+.picture-overlay {
+        width: 320px;
+        height: 320px;
+}
+/** nav bar **/
+.navBar {
+        height: 110px;
+}
+.navBar-left {
+}
+.navBar-download {      
+        font-size: 24px;
+        margin: 10px;
+}
+.navBar-center{
+        position: relative;
+        float: right;
+        margin-left: 0px!important;
+	left: 0%;
+	margin-right: 6px;
+}
+
+.navBar-right {
+        position: absolute;
+        left: 50%;
+	margin-top: 50px;
+        margin-left: -65px!important;
+}
+
+.navbarFooter{
+	display: block;
+
+}
+
+}

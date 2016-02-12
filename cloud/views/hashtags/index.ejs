@@ -1,0 +1,25 @@
+<% include ../_header %>
+
+  <div class='selfie_container'>
+    <% if (!_.isEmpty(hashtags)) { %>
+        <h3>#life is a anonymous photo sharing app. Take a picture and tag it with 1 or more hashtags.
+</h3>
+<h4>
+At a concert, take a selfie! #eventName #awesome #concert #selfie<br/>
+Are you out with a bunch of friends? Take a group photo. #barName #besties #nightout #friday<br/>
+Your sports team just won? #selfie #reaction #baseball #tbrays<br/>
+Your favorite character died, in your favorite tv series! #selfie #sad #tvShow #characterName<br/>
+</h4>
+      <h2>#<%= searched %></h2>
+	<div class="picture_container">
+      <% hashtags.forEach(function(hashtag) { %>
+        <% include _hashtag %>
+      <% }) %>
+	</div>
+    <% } else { %>
+      <p>No selfies yet.</p>
+    <% } %>
+  </div>
+
+
+<% include ../_footer %>

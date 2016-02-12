@@ -1,0 +1,14 @@
+<% include ../_header %>
+
+  <div class='selfie_container'>
+    <% if (userCount) { %>
+      <h2>Photos <%= photoCount %></h2>
+      <h2>Users <%= userCount %></h2>
+
+    <% } else { %>
+      <h2>No Data yet.</h2>
+    <% } %>
+  </div>
+
+
+<% include ../_footer %>

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= typeof title === "undefined" ? "#life" : title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//d2c5utp5fpfikz.cloudfront.net/3_1_1/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel='stylesheet' href='/stylesheets/<%= typeof stylesheet === "undefined" ? "main" : stylesheet %>.css' />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53643197-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+  <body>
+
+<div class="main-container">
+
+    <% if (searched) { %>
+      
+	<div id="slideshow"></div>
+
+    <% } else { %>
+      <h2>No Data yet.</h2>
+    <% } %>
+
+<div class="right-corner-logo">
+
+<img src="/images/AppIconRounded.png" class="corner-logo"  />
+<div class="text-logo">hashtag life</div>
+<img src="/images/badge.png" class="corner-logo"  />
+
+</div>
+
+<div class="left-corner-logo">
+
+<h2 class="searched">#<%= searched %></h2>
+
+</div>
+
+  <style>
+
+.left-corner-logo{
+   position: fixed;
+   left: 0px;
+   bottom: 0px;
+   width: 350px;
+   height: 110px;
+   margin: 30px;
+}
+.searched{
+  text-align:left;
+  font-size: 44px;
+  text-indent: 20px;
+  font-weight: normal;
+}
+.corner-logo{
+   max-width: 120px;
+}
+.text-logo{
+	color: rgb(250, 204, 101);
+	font-size: 29px;
+	text-align: center;
+	width: 150px;
+	margin-left: -12px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.right-corner-logo{
+   position: fixed;
+   right: 0px;
+   bottom: 0px;
+   width: 150px;
+   height: 225px;
+   margin: 30px;
+}
+
+#slideshow {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slide {
+ 
+    position: fixed;
+    min-height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    left: 50%;
+    margin-left: -300px;
+    display: none;
+}
+
+  </style>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+
+showContent = function() {
+  var contentAPI = "http://life.uffda.me/vdata/<%= searched %>";
+  $.getJSON( contentAPI, {
+    format: "json"
+  }).done(function( data ) {
+      if(data.length > $("#slideshow > img").length){	 
+        $( "#slideshow" ).empty();
+        $.each( data, function( i, item ) {
+          $( "<img>" ).attr("class", "slide").attr("style", "display: none;").attr( "src", item.image.url ).appendTo( "#slideshow" );
+          $('#slideshow :first-child').show();          
+	});
+      }
+   });   
+};
+
+   window.setInterval(showContent, <%= speed %>);    
+   showContent();
+
+   $('#slideshow img:gt(0)').hide();
+    setInterval(function(){
+      $('#slideshow :first-child').fadeOut(1000)
+         .next('img').fadeIn(1000)
+         .end().appendTo('#slideshow');}, 
+      8000);
+
+</script>
+
+
+</div>
+  </body>
+</html>
